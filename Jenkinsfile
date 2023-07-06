@@ -24,14 +24,18 @@ pipeline {
       }
     }
 
-    stage('Run') {
-      steps {
-        sh 'node index.js'
-      }
-    }
-
   }
   tools {
     nodejs '16.13.2'
   }
+  post {
+        always {
+            script {
+                // Run shell script
+                sh 'node index.js'
+                #!/bin/bash
+                echo "This is a shell script"
+            }
+        }
+    }
 }
