@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
 
+app.get('/hello', (req, res) => {
+  res.send('Hello, world! from hello api');
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
