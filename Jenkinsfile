@@ -33,7 +33,6 @@ pipeline {
             script {
                 // Run shell script
                 sh 'node index.js'
-                #!/bin/bash
                 echo "This is a shell script"
             }
         }
