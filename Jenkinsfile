@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    nodejs 'nodejs'
+    nodejs '16.13.2'
   }
   
   stages {
@@ -15,7 +15,7 @@ pipeline {
       parallel {
         stage('List content') {
           steps {
-            sh 'ls'
+            sh 'node --version'
           }
         }
 
