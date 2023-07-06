@@ -1,9 +1,5 @@
 pipeline {
   agent any
-  tools {
-    nodejs '16.13.2'
-  }
-  
   stages {
     stage('Checkout Code') {
       steps {
@@ -28,5 +24,8 @@ pipeline {
       }
     }
 
+  }
+  tools {
+    nodejs '16.13.2'
   }
 }
