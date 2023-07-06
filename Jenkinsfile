@@ -6,3 +6,5 @@ pipeline {
         git(url: 'https://github.com/gautam-patil/node-cicd', branch: 'main')
       }
     }
+  }
+}
