@@ -8,8 +8,19 @@ pipeline {
     }
 
     stage('List content') {
-      steps {
-        sh 'ls'
+      parallel {
+        stage('List content') {
+          steps {
+            sh 'ls'
+          }
+        }
+
+        stage('NPM I') {
+          steps {
+            sh 'npm i'
+          }
+        }
+
       }
     }
 
