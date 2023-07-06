@@ -24,6 +24,12 @@ pipeline {
       }
     }
 
+    stage('Run') {
+      steps {
+        sh 'node index.js'
+      }
+    }
+
   }
   tools {
     nodejs '16.13.2'
