@@ -21,6 +21,18 @@ pipeline {
           }
         }
 
+        stage('Build Docker Image') {
+          steps {
+            sh 'docker build -t node-cicd .'
+          }
+        }
+
+        stage('Run Docker') {
+          steps {
+            sh 'docker run -d -p 3000:3000 node-cicd'
+          }
+        }
+
       }
     }
 
@@ -28,13 +40,4 @@ pipeline {
   tools {
     nodejs '16.13.2'
   }
-  post {
-        always {
-            script {
-                // Run shell script
-                sh 'node index.js'
-                echo "This is a shell script"
-            }
-        }
-    }
 }
